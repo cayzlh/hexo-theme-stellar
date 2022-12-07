@@ -22,7 +22,6 @@ meta:
   next: Next
   older: Older
   newer: Newer
-  all_articles: All Articles
   references: References
   related_posts: Related Posts
   comment_title: Join the discussion
@@ -31,7 +30,6 @@ meta:
   created: 'Posted on'
   updated: 'Updated on'
   license: License
-  shareplan: Share Plan
   share: Share
   date_suffix:
     just: Just
