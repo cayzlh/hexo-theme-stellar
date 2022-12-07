@@ -1,0 +1,56 @@
+<%
+function layoutTitle() {
+    const title = page.h1 || page.title;
+    if (title && title.length > 0) {
+        return '<h1 class="article-title"><span>' + title + '</span></h1>';
+    } else {
+        return '';
+    }
+}
+%>
+<link
+        rel="stylesheet"
+        href="https://cdn.staticfile.org/highlight.js/10.6.0/styles/atom-one-dark.min.css"
+/>
+<link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/ispeak@4.4.0/style.css"
+/>
+<script src="https://cdn.staticfile.org/highlight.js/10.6.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/marked/2.0.0/marked.min.js"></script>
+<script src="https://fastly.jsdelivr.net/gh/cayzlh/psychic-potato@master/js/speak.umd.js"></script>
+<!-- CSS -->
+<link href="https://unpkg.com/artalk@2.3.4/dist/Artalk.css" rel="stylesheet"/>
+<!-- JS -->
+<script src="https://unpkg.com/artalk@2.3.4/dist/Artalk.js"></script>
+
+<article class='content md'>
+    <%- partial('_partial/main/navbar/list_post') %>
+    <%- page.content %>
+    <div id="tip" style="text-align:center;">小声哔哔 加载中</div>
+    <div id="ispeak"></div>
+</article>
+<%- partial('_partial/plugins/comments/layout') %>
+
+<script>
+    var head = document.getElementsByTagName('head')[0]
+    var meta = document.createElement('meta')
+    meta.name = 'referrer'
+    meta.content = 'no-referrer'
+    head.appendChild(meta)
+    if (ispeak) {
+        ispeak
+            .init({
+                el: '#ispeak',
+                api: '<%- theme.speak.api %>',
+                author: '<%- theme.speak.author %>',
+                pageSize: '<%- theme.speak.pageSize %>',
+                loading_img: '<%- theme.speak.loading_img %>'
+            })
+            .then(function () {
+                document.getElementById('tip').style.display = 'none'
+            })
+    } else {
+        document.getElementById('tip').innerHTML = '小声哔哔 依赖加载失败！'
+    }
+</script>
