@@ -1,15 +1,18 @@
 btn:
   home: 首頁
   blog: 網誌
-  wiki: Wiki
+  wiki: 項目
+  notes: 便笺
+  more: 更多
   recent_publish: 近期發布
-  all_wiki: 所有 Wiki
+  all_wiki: 所有項目
   category: 分類
   categories: 分類
   tag: 標籤
   tags: 標籤
   archives: 封存
   getting_started: 開始使用
+  speak: 小声哔哔
 
 meta:
   recent_update: 最近更新
@@ -27,6 +30,7 @@ meta:
   created: 發布於
   updated: 更新於
   license: 授權條款
+  shareplan: 分享计划
   share: 分享文章
   date_suffix:
     just: 剛剛

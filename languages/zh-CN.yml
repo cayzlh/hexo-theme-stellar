@@ -1,18 +1,21 @@
 btn:
   home: 主页
-  blog: 文章
-  wiki: 项目
+  blog: 随笔
+  wiki: 专栏
+  notes: 便笺
+  more: 更多
   recent_publish: 近期发布
-  all_wiki: 所有项目
+  all_wiki: 所有专栏
   category: 分类
   categories: 分类
   tag: 标签
   tags: 标签
   archives: 归档
   getting_started: 开始使用
+  speak: 小声哔哔
 
 meta:
-  recent_update: 最近更新
+  recent_update: ⏰ 最近更新
   toc: 本文目录
   read_next: 接下来阅读
   prev: 回顾上一篇
@@ -27,6 +30,7 @@ meta:
   created: 发布于
   updated: 更新于
   license: 许可协议
+  shareplan: 分享计划
   share: 分享文章
   date_suffix:
     just: 刚刚

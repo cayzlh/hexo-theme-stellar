@@ -2,6 +2,8 @@ btn:
   home: Home
   blog: Blog
   wiki: Wiki
+  notes: Notes
+  more: More
   recent_publish: Recent
   all_wiki: All Products
   category: Category
@@ -10,6 +12,7 @@ btn:
   tags: Tags
   archives: Archives
   getting_started: Getting Started
+  speak: bibi
 
 meta:
   recent_update: Recent Update
@@ -19,6 +22,7 @@ meta:
   next: Next
   older: Older
   newer: Newer
+  all_articles: All Articles
   references: References
   related_posts: Related Posts
   comment_title: Join the discussion
@@ -27,6 +31,7 @@ meta:
   created: 'Posted on'
   updated: 'Updated on'
   license: License
+  shareplan: Share Plan
   share: Share
   date_suffix:
     just: Just
