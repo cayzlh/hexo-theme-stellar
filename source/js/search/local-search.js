@@ -24,6 +24,20 @@
 /*exported searchFunc*/
 var searchFunc = function(path, filter, searchId, contentId) {
 
+  function stripHtml(html) {
+    html = html.replace(/<style([\s\S]*?)<\/style>/gi, "");
+    html = html.replace(/<script([\s\S]*?)<\/script>/gi, "");
+    html = html.replace(/<figure([\s\S]*?)<\/figure>/gi, "");
+    html = html.replace(/<\/div>/ig, "\n");
+    html = html.replace(/<\/li>/ig, "\n");
+    html = html.replace(/<li>/ig, "  *  ");
+    html = html.replace(/<\/ul>/ig, "\n");
+    html = html.replace(/<\/p>/ig, "\n");
+    html = html.replace(/<br\s*[\/]?>/gi, "\n");
+    html = html.replace(/<[^>]+>/ig, "");
+    return html;
+  }
+
   function getAllCombinations(keywords) {
     var i, j, result = [];
 
@@ -54,17 +68,18 @@ var searchFunc = function(path, filter, searchId, contentId) {
         }
         // perform local searching
         datas.forEach(function(data) {
-          if (!data.title?.trim().length) { return }
-          if (!data.content?.trim().length) { return }
           var matches = 0;
-          if (filter && !data.path.includes(filter)) {
+          if (!data.title || data.title.trim() === "") {
             return;
           }
-          var dataTitle = data.title.trim();
+          if (filter && !data.url.includes(filter)) {
+            return;
+          }
+          var dataTitle = data.title.trim().toLowerCase();
           var dataTitleLowerCase = dataTitle.toLowerCase();
-          var dataContent = data.content;
+          var dataContent = stripHtml(data.content.trim());
           var dataContentLowerCase = dataContent.toLowerCase();
-          var dataUrl = data.path;
+          var dataUrl = data.url;
           var indexTitle = -1;
           var indexContent = -1;
           var firstOccur = -1;
