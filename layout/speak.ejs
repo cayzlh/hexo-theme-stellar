@@ -24,12 +24,14 @@ function layoutTitle() {
 <!-- JS -->
 <script src="https://unpkg.com/artalk@2.3.4/dist/Artalk.js"></script>
 
-<%- partial('_partial/main/navbar/list_post') %>
-<article class='<%- scrollreveal() %>' id='sp'>
-    <%- page.content %>
-    <div id="tip" style="text-align:center;">小声哔哔 加载中</div>
-    <div id="ispeak"></div>
-</article>
+<div class='post-list'>
+    <%- partial('_partial/main/navbar/list_post') %>
+    <article class='<%- scrollreveal() %>' id='cats'>
+        <%- page.content %>
+        <div id="tip" style="text-align:center;">小声哔哔 加载中</div>
+        <div id="ispeak"></div>
+    </article>
+<div class='post-list'>
 
 <script>
     var head = document.getElementsByTagName('head')[0]
