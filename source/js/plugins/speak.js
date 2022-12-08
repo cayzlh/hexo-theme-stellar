@@ -48,8 +48,7 @@ const StellarSpeak = {
     StellarSpeak.requestAPI(cfg.api, function(data) {
       $(el).find('.loading-wrap').remove();
 
-      console.log('---------data----------', data)
-      const arr = data.items || data;
+      const arr = data.data.items || data;
       console.log('---------arr----------', arr)
       arr.forEach((item, i) => {
         var cell = '<div class="timenode" index="' + i + '">';
