@@ -21,13 +21,8 @@ function layoutNodeContent(content) {
 }
 
 function postSpeakLine(args, content) {
-  <!-- 只显示某个人的数据 -->
-  /*{% timeline user:xaoxuu api:https://api.github.com/repos/volantis-x/hexo-theme-volantis/issues %}{% endtimeline %}*/
-  <!-- 筛选最近3条todo -->
-  /*{% timeline api:https://api.github.com/repos/xaoxuu/hexo-theme-stellar/issues?labels=todo&per_page=3 %}{% endtimeline %}*/
-  <!-- 筛选评论最多的3条建议 -->
-  /*{% timeline api:https://api.github.com/repos/volantis-x/hexo-theme-volantis/issues?labels=feature-request&per_page=3&sort=comments %}{% endtimeline %}*/
-  // https://api.speak.cayzlh.com/api/ispeak?author=633ee4eaa3fa60f68c752aa2&page=1&pageSize=6
+  console.log('args', args);
+  console.log('content', content);
   args = hexo.args.map(args, ['api']);
   var el = '';
   if (!args.type) {
