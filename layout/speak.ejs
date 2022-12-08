@@ -7,6 +7,7 @@ function layoutTitle() {
         return '';
     }
 }
+
 %>
 <link
         rel="stylesheet"
@@ -24,7 +25,7 @@ function layoutTitle() {
     <%- partial('_partial/main/navbar/list_post') %>
     <article class='<%- scrollreveal() %>' id='cats'>
         <%- page.content %>
-        <div id="ispeak"></div>
+        <div class="tag-plugin timeline" id="ispeak"></div>
     </article>
 </div>
 
@@ -122,6 +123,7 @@ const StellarSpeak = {
 }
 
 $(function () {
+    debugger;
     const els = document.getElementById('ispeak');
     const el = els[0];
     // https://api.speak.cayzlh.com/api/ispeak?author=633ee4eaa3fa60f68c752aa2&page=1&pageSize=6
