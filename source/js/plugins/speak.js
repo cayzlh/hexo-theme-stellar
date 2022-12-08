@@ -66,7 +66,7 @@ const StellarSpeak = {
         cell += '</div>';
         cell += '<div class="body">';
 
-        cell += marked.parse(item.content || '');
+        cell += marked.parse(item.content);
 
         cell += '<div class="footer">';
         cell += '<div class="flex right">';
