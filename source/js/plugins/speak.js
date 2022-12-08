@@ -1,14 +1,4 @@
 const StellarSpeak = {
-  reactions: {
-    '+1': '👍',
-    '-1': '👎',
-    'laugh': '😀',
-    'hooray': '🎉',
-    'confused': '😕',
-    'heart': '❤️',
-    'rocket': '🚀',
-    'eyes': '👀'
-  },
   requestAPI: (url, callback, timeout) => {
     let retryTimes = 5;
     function request() {
