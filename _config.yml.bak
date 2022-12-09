@@ -80,7 +80,7 @@ search:
     path: /search.json # 搜索文件存放位置
     content: true # 是否搜索内容
     codeblock: true # 是否搜索代码块（需要content: true)
-  
+
 
 ######## Comments ########
 comments:
@@ -190,7 +190,7 @@ footer:
     #   url: /
     # comments:
     #   icon: '<img src="https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.3/social/942ebbf1a4b91.svg"/>'
-    #   url: /about/#comments
+    #   url: /#comments
   sitemap:
     # '博客':
     #   - '[近期](/)'
@@ -261,7 +261,7 @@ plugins:
     fcircle: /js/plugins/fcircle.js
 
   marked: https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js
-  
+
   ## optional plugins ##
   # preload
   preload:
