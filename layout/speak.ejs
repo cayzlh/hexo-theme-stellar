@@ -1,13 +1,3 @@
-<%
-function layoutTitle() {
-    const title = page.h1 || page.title;
-    if (title && title.length > 0) {
-        return '<h1 class="article-title"><span>' + title + '</span></h1>';
-    } else {
-        return '';
-    }
-}
-%>
 <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/ispeak@4.4.0/style.css"
@@ -16,14 +6,12 @@ function layoutTitle() {
 <script src="https://cdn.staticfile.org/marked/2.0.0/marked.min.js"></script>
 <script src="https://fastly.jsdelivr.net/gh/cayzlh/psychic-potato@master/js/speak.umd.js"></script>
 
-<div class='post-list'>
-    <%- partial('_partial/main/navbar/list_post') %>
-    <article class='md-text content post' id='sp'>
-        <%- page.content %>
-        <div id="tip" style="text-align:center;">小声哔哔 加载中</div>
-        <div id="ispeak"></div>
-    </article>
-</div>
+<article class='md-text content <%- page.layout %><%- scrollreveal() %>' style="margin-top:0" id='sp'>
+    <%- page.content %>
+    <div id="tip" style="text-align:center;">加载中...</div>
+    <div id="ispeak"></div>
+</article>
+<%- partial('_partial/plugins/comments/layout') %>
 
 <script>
     var head = document.getElementsByTagName('head')[0]
