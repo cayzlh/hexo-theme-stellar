@@ -4,9 +4,9 @@ function layoutDiv() {
   el += '<div class="nav-wrap">';
   el += '<nav class="sub post cap">';
   if (is_home()) {
-    el += '<a class="active" href="' + url_for("/") + '">' + __("btn.recent_publish") + '</a>';
+    el += '<a class="active" href="' + url_for("/post/") + '">' + __("btn.recent_publish") + '</a>';
   } else {
-    el += '<a href="' + url_for("/") + '">' + __("btn.recent_publish") + '</a>';
+    el += '<a href="' + url_for("/post/") + '">' + __("btn.recent_publish") + '</a>';
   }
 
   if (site.categories && site.categories.length > 0) {
@@ -28,7 +28,7 @@ function layoutDiv() {
       el += '<a href="' + url_for(config.tag_dir) + '">' + __("btn.tags") + '</a>';
     }
   }
-  
+
   if (site.posts && site.posts.length > 0) {
     if (is_archive()) {
       el += '<a class="active" href="' + url_for(config.archive_dir) + '">' + __("btn.archives") + '</a>';
@@ -36,7 +36,7 @@ function layoutDiv() {
       el += '<a href="' + url_for(config.archive_dir) + '">' + __("btn.archives") + '</a>';
     }
   }
-  
+
   if (theme['post-index']) {
     const obj = theme['post-index'];
     for (let key of Object.keys(obj)) {
