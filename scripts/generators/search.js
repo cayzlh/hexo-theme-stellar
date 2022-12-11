@@ -54,6 +54,8 @@ hexo.extend.generator.register('search_json_generator', function (locals) {
         content = content.replace(/[#]{2,} /g, '')
         // 部分HTML标签
         content = content.replace(/<iframe[\s|\S]+iframe>/g, '')
+        content = content.replace(/<hr>/g, '')
+        content = content.replace(/<br>/g, '')
         // 图片
         content = content.replace(/\!\[(.*?)\]\((.*?)\)/g, '')
         // 链接
@@ -91,8 +93,8 @@ hexo.extend.generator.register('search_json_generator', function (locals) {
       if (post.indexing == false) return
       let temp_post = generateJson(post)
       res.push(temp_post)
-    }) 
-  } 
+    })
+  }
   if (pages) {
     pages.each(function(page) {
       if (page.indexing == false) return

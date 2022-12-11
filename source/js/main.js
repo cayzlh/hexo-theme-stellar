@@ -360,25 +360,3 @@ if (stellar.plugins.heti) {
     stellar.plugins.heti.enable = false;
   });
 }
-
-// speak js
-if (stellar.plugins.speak) {
-  for (let key of Object.keys(stellar.plugins.speak)) {
-    let js = stellar.plugins.stellar[key];
-    if (key == 'linkcard') {
-      stellar.loadScript(js, { defer: true }).then(function () {
-        setCardLink(document.querySelectorAll('a.link-card[cardlink]'));
-      });
-    } else {
-      const els = document.getElementsByClassName('stellar-' + key + '-api');
-      if (els != undefined && els.length > 0) {
-        stellar.jQuery(() => {
-          stellar.loadScript(js, { defer: true });
-          if (key == 'speak') {
-            stellar.loadScript(stellar.plugins.marked);
-          }
-        })
-      }
-    }
-  }
-}

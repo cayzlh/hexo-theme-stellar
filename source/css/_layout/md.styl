@@ -22,8 +22,8 @@ h1.article-title
 .md-text.content
   position: relative
   margin-bottom: 2rem
-  display: flex
-  flex-direction: column
+  // display: flex
+  // flex-direction: column
   &.indent
     >p:not([class])
       text-indent: 'calc(%s * 2)' % $fs-p
@@ -122,14 +122,14 @@ h1.article-title
   margin: auto
   display: block
 
-.md-text 
+.md-text
   p:not([class]), li:not([class])
     a:not([class])
       position: relative
       padding: 2px 0
       text-decoration: none
       line-height: 1.2
-      &:after
+      &:before
         content: ''
         position: absolute
         border-radius: 2px
@@ -143,9 +143,11 @@ h1.article-title
       &:hover
         border-bottom: none
         color: var(--theme-link)
-        &:after
+        z-index 0
+        &:before
           height: 100%
           opacity: 0.2
+          z-index -1
           bottom: 0
           left: -2px
           right: -2px

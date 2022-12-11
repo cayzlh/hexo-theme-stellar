@@ -1,9 +1,9 @@
 /**
- * quot.js v1.1 | https://github.com/xaoxuu/hexo-theme-stellar/
+ * quot.js v1.2 | https://github.com/xaoxuu/hexo-theme-stellar/
  * 格式与官方标签插件一致使用空格分隔，中括号内的是可选参数（中括号不需要写出来）
  *
  * quot:
- * {% quot [el:h1] [icon:default] text %}
+ * {% quot [el:h2] [icon:default] text %}
  *
  */
 
@@ -38,14 +38,18 @@ hexo.extend.tag.register('quot', function(args) {
     return el;
   }
   if (args.el.includes('h')) {
-    el += '<' + args.el + ' class="tag-plugin quot"' + type + ' id="' + args.text + '">';
+    el += '<div' + ' class="tag-plugin quot">'
+    el += '<' + args.el + ' class="content" id="' + args.text + '"' + type + '>';
     el += '<a href="#' + args.text + '" class="headerlink" title="' + args.text + '"></a>';
     el += content();
     el += '</' + args.el + '>';
+    el += '</div>'
   } else {
-    el += '<' + args.el + ' class="tag-plugin quot"' + type + '>';
+    el += '<div' + ' class="tag-plugin quot">'
+    el += '<' + args.el + ' class="content"' + type + '>';
     el += content();
     el += '</' + args.el + '>';
+    el += '</div>'
   }
   return el;
 });
