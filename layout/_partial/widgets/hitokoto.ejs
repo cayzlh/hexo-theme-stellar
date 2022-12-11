@@ -46,7 +46,7 @@ function layoutDiv() {
         })
         .then(function (data) {
             var hitokoto = document.getElementById('hitokoto');
-            hitokoto.innerText = '「' + data.from + '」' + data.hitokoto;
+            hitokoto.innerText = '«' + data.from + '»' + data.hitokoto;
         })
         .catch(function (err) {
             console.error(err);
