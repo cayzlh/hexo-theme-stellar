@@ -190,7 +190,7 @@ footer:
     #   url: /
     # comments:
     #   icon: '<img src="https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.3/social/942ebbf1a4b91.svg"/>'
-    #   url: /status/#comments
+    #   url: /about/#comments
   sitemap:
     # '博客':
     #   - '[近期](/)'
