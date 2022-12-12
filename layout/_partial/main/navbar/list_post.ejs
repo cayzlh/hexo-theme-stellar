@@ -9,25 +9,27 @@ function layoutDiv() {
     el += '<a href="' + url_for("/") + '">' + __("btn.recent_publish") + '</a>';
   }
 
-  if (site.categories && site.categories.length > 0) {
-    if (page.category) {
-      el += '<a class="active" href="' + url_for(config.category_dir) + '">' + __("btn.category") + __("symbol.colon") + page.category + '</a>';
-    } else if (page.layout == "categories") {
-      el += '<a class="active" href="' + url_for(config.category_dir) + '">' + __("btn.categories") + '</a>';
-    } else {
-      el += '<a href="' + url_for(config.category_dir) + '">' + __("btn.categories") + '</a>';
-    }
-  }
+  // 隐藏分类页面
+  // if (site.categories && site.categories.length > 0) {
+  //   if (page.category) {
+  //     el += '<a class="active" href="' + url_for(config.category_dir) + '">' + __("btn.category") + __("symbol.colon") + page.category + '</a>';
+  //   } else if (page.layout == "categories") {
+  //     el += '<a class="active" href="' + url_for(config.category_dir) + '">' + __("btn.categories") + '</a>';
+  //   } else {
+  //     el += '<a href="' + url_for(config.category_dir) + '">' + __("btn.categories") + '</a>';
+  //   }
+  // }
 
-  if (site.tags && site.tags.length > 0) {
-    if (page.tag) {
-      el += '<a class="active" href="' + url_for(config.tag_dir) + '">' + __("btn.tag") + __("symbol.colon") + page.tag + '</a>';
-    } else if (page.layout == "tags") {
-      el += '<a class="active" href="' + url_for(config.tag_dir) + '">' + __("btn.tags") + '</a>';
-    } else {
-      el += '<a href="' + url_for(config.tag_dir) + '">' + __("btn.tags") + '</a>';
-    }
-  }
+  // 隐藏标签页面
+  // if (site.tags && site.tags.length > 0) {
+  //   if (page.tag) {
+  //     el += '<a class="active" href="' + url_for(config.tag_dir) + '">' + __("btn.tag") + __("symbol.colon") + page.tag + '</a>';
+  //   } else if (page.layout == "tags") {
+  //     el += '<a class="active" href="' + url_for(config.tag_dir) + '">' + __("btn.tags") + '</a>';
+  //   } else {
+  //     el += '<a href="' + url_for(config.tag_dir) + '">' + __("btn.tags") + '</a>';
+  //   }
+  // }
 
   if (site.posts && site.posts.length > 0) {
     if (is_archive()) {
