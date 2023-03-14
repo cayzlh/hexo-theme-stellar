@@ -5,7 +5,7 @@
 <article class='md-text content <%- page.layout %><%- scrollreveal() %>'
          style="padding-top: 0;padding-left: 1rem;padding-right: 1rem;padding-bottom: 1rem;" id='sp'>
     <%- page.content %>
-    <div id="tip" style="text-align:center;">加载中...</div>
+    <div id="tip" style="text-align:center;">:D 获取中...</div>
     <div id="ispeak"></div>
 </article>
 <%- partial('_partial/plugins/comments/layout') %>
@@ -29,6 +29,6 @@
                 document.getElementById('tip').style.display = 'none'
             })
     } else {
-        document.getElementById('tip').innerHTML = '小声哔哔 依赖加载失败！'
+        document.getElementById('tip').innerHTML = '加载失败！'
     }
 </script>
