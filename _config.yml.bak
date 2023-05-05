@@ -106,9 +106,6 @@ footer:
     email:
       icon: '<img src="https://gcore.jsdelivr.net/gh/cayzlh/psychic-potato@master/image/social/mailto.svg"/>'
       url: mailto:mail@cayzlh.com
-    comments:
-      icon: '<img src="https://gcore.jsdelivr.net/gh/cayzlh/psychic-potato@master/image/social/comments.svg"/>'
-      url: /message/#comments
     travelling:
       icon: '<img src="https://travellings.link/assets/travelling-light.png"/>'
       url: 'https://travellings.link'
@@ -127,7 +124,6 @@ footer:
       - '[Mybatis技术内幕](/wiki/mybatis-technology-insider/)'
     '社交':
       - '[小声哔哔](/speak/)'
-      - '[留言板](/message/#comments)'
       - '[Telegram](https://telegram.me/Q2F5emxo)'
       - '[Email](mailto:mail@cayzlh.com)'
     '更多':
