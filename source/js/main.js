@@ -221,11 +221,11 @@ if (stellar.plugins.lazyload) {
   // Listen to the initialization event
   // and get the instance of LazyLoad
   window.addEventListener(
-      "LazyLoad::Initialized",
-      function (event) {
-        window.lazyLoadInstance = event.detail.instance;
-      },
-      false
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
   );
   document.addEventListener('DOMContentLoaded', function () {
     window.lazyLoadInstance?.update();
@@ -334,9 +334,10 @@ if (stellar.search.service) {
         var $resultArea = document.querySelector("div#search-result");
         $inputArea.focus(function() {
           var path = stellar.search[stellar.search.service]?.path || '/search.json';
-          if (!path.startsWith('/')) {
-            path = '/' + path;
+          if (path.startsWith('/')) {
+            path = path.substring(1);
           }
+          path = stellar.config.root + path;
           const filter = $inputArea.attr('data-filter') || '';
           searchFunc(path, filter, 'search-input', 'search-result');
         });
@@ -383,4 +384,8 @@ if (stellar.plugins.heti) {
 
     stellar.plugins.heti.enable = false;
   });
+}
+
+if (stellar.plugins.copycode) {
+  stellar.loadScript(stellar.plugins.copycode.js, { defer: true })
 }

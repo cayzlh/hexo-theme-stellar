@@ -28,9 +28,9 @@ var searchFunc = function(path, filter, searchId, contentId) {
     var i, j, result = [];
 
     for (i = 0; i < keywords.length; i++) {
-      for (j = i + 1; j < keywords.length + 1; j++) {
-        result.push(keywords.slice(i, j).join(" "));
-      }
+        for (j = i + 1; j < keywords.length + 1; j++) {
+            result.push(keywords.slice(i, j).join(" "));
+        }
     }
     return result;
   }
@@ -47,7 +47,7 @@ var searchFunc = function(path, filter, searchId, contentId) {
       $input.addEventListener("input", function(){
         var resultList = [];
         var keywords = getAllCombinations(this.value.trim().toLowerCase().split(" "))
-            .sort(function(a,b) { return b.split(" ").length - a.split(" ").length; });
+          .sort(function(a,b) { return b.split(" ").length - a.split(" ").length; });
         $resultContent.innerHTML = "";
         if (this.value.trim().length <= 0) {
           return;
@@ -120,7 +120,7 @@ var searchFunc = function(path, filter, searchId, contentId) {
         });
         if (resultList.length) {
           resultList.sort(function(a, b) {
-            return b.rank - a.rank;
+              return b.rank - a.rank;
           });
           var result ="<ul class=\"search-result-list\">";
           for (var i = 0; i < resultList.length; i++) {
