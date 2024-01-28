@@ -8,29 +8,28 @@
   padding: 1rem
   box-shadow: $boxshadow-card
 
-.widget-wrapper.ghuser
+.widgets .widget-wrapper.ghuser 
   .avatar
     display: block
     border-radius: 100%
     margin: 1rem auto 1.25rem auto
     max-width: 75%
     overflow: hidden
-    img
+    img 
       display: block
     @media screen and (max-width: $device-tablet)
       max-width: 50%
 
-  .username
+  p.username
     font-weight: 900
     font-size: $fs-h2
     color: var(--text-p0)
-    margin: 0.5rem 0
-
-  .bio
+    margin: 0
+  p.bio
     font-size: $fs-13
-    margin: 0.5rem 0
+    margin: 0
 
-  .follow
+  .follow 
     font-weight: 500
     border-radius: 64px
     padding: 0.5rem 1rem
@@ -49,29 +48,6 @@
     &:hover
       background: $color-hover
 
-  .menu
-    margin-bottom: 0
-    background: none
-    border: 0
-    a
-      margin: 0
-      &.active
-        box-shadow: none
-        position: relative
-        background: none
-        &:after
-          content: ''
-          position: absolute
-          height: 3px
-          bottom: 0
-          width: 32px
-          left: 'calc(50% - 0.5 * %s)' % @width
-          border-radius: 4px
-          background: $color-theme
-      &:hover
-        box-shadow: none
-        background: var(--block)
-
   .buttons
     margin: 1rem 0
     align-self: stretch
@@ -80,7 +56,7 @@
     grid-template-columns: repeat(auto-fill, "calc((100% - 2 * %s) / 3)" % 2px)
 
   .btn
-    display: flex
+    display: flex 
     flex-direction: column
     align-items: center
     color: inherit

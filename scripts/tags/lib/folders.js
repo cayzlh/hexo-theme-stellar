@@ -15,10 +15,10 @@
 module.exports = ctx => function(args, content) {
   args = ctx.args.map(args, ['color'])
   var el = ''
-  el += '<div class="tag-plugin folders"'
+  el += '<div class="tag-plugin colorful folders"'
   el += ' ' + ctx.args.joinTags(args, ['color']).join(' ')
   el += '>'
-
+  
   var arr = content.split(/<!--\s*folder (.*?)\s*-->/g).filter(item => item.trim().length > 0)
   if (arr.length > 0) {
     var nodes = []
@@ -44,10 +44,10 @@ module.exports = ctx => function(args, content) {
       el += '<div class="body">'
       el += ctx.render.renderSync({text: (node.body || ''), engine: 'markdown'}).split('\n').join('')
       el += '</div></details>'
-    })
+    })  
   }
 
   el += '</div>'
-
+  
   return el
 }

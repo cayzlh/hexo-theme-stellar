@@ -1,21 +1,19 @@
 btn:
   home: 主页
-  blog: 博客
-  wiki: 专栏
-  notes: 便笺
-  more: 更多
+  blog: 文章
+  wiki: 文档
+  topic: 专栏
   recent_publish: 近期发布
-  all_wiki: 所有专栏
+  all_wiki: 所有文档
   category: 分类
   categories: 分类
   tag: 标签
   tags: 标签
   archives: 归档
   getting_started: 开始使用
-  speak: 小声哔哔
 
 meta:
-  recent_update: 🎉 最近更新
+  recent_update: 最近更新
   toc: 本文目录
   read_next: 接下来阅读
   prev: 回顾上一篇
@@ -26,11 +24,12 @@ meta:
   related_posts: 您可能感兴趣的文章
   comment_title: 快来参与讨论吧
   back_to_top: 回到顶部
-  more: '更多%s'
+  more: 更多
+  created_author: 本文由 %s 发布于
   created: 发布于
   updated: 更新于
-  license: 分享计划
-  share: 文章链接
+  license: 许可协议
+  share: 分享文章
   date_suffix:
     just: 刚刚
     min: 分钟前

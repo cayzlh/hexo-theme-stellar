@@ -4,7 +4,7 @@
 
 'use strict'
 
-var tab_index = 0
+var tab_index = 0 
 
 module.exports = ctx => function(args, content = '') {
   var arr = content.split(/<!--\s*tab (.*?)\s*-->/g).filter(item => item.trim().length > 0)

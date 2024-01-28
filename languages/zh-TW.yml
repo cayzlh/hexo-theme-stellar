@@ -1,21 +1,19 @@
 btn:
   home: 首頁
   blog: 網誌
-  wiki: 項目
-  notes: 便笺
-  more: 更多
+  wiki: 文檔
+  topic: 專欄
   recent_publish: 近期發布
-  all_wiki: 所有項目
+  all_wiki: 所有 Wiki
   category: 分類
   categories: 分類
   tag: 標籤
   tags: 標籤
   archives: 封存
   getting_started: 開始使用
-  speak: 小声哔哔
 
 meta:
-  recent_update: 🎉 最近更新
+  recent_update: 最近更新
   toc: 本文目錄
   read_next: 接下來閱讀
   prev: 回顧上一篇
@@ -26,11 +24,12 @@ meta:
   related_posts: 您可能感興趣的文章
   comment_title: 參與討論
   back_to_top: 回到頁首
-  more: '更多%s'
+  more: 更多
+  created_author: 本文由 %s 發布於
   created: 發布於
   updated: 更新於
-  license: 分享计划
-  share: 文章链接
+  license: 授權條款
+  share: 分享文章
   date_suffix:
     just: 剛剛
     min: 分鐘前

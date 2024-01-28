@@ -2,8 +2,7 @@ btn:
   home: Home
   blog: Blog
   wiki: Wiki
-  notes: Notes
-  more: More
+  topic: Topic
   recent_publish: Recent
   all_wiki: All Products
   category: Category
@@ -12,10 +11,9 @@ btn:
   tags: Tags
   archives: Archives
   getting_started: Getting Started
-  speak: bibi
 
 meta:
-  recent_update: 🎉 Recent Update
+  recent_update: Recent Update
   toc: TOC
   read_next: READ NEXT
   prev: Prev
@@ -26,10 +24,11 @@ meta:
   related_posts: Related Posts
   comment_title: Join the discussion
   back_to_top: Back to top
-  more: 'More %s'
+  more: More
+  created_author: '%s posted on'
   created: 'Posted on'
   updated: 'Updated on'
-  license: Shre Plan
+  license: License
   share: Share
   date_suffix:
     just: Just

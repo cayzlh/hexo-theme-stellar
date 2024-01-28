@@ -65,8 +65,8 @@ hexo.extend.generator.register('search_json_generator', function (locals) {
       if (post.indexing == false) return
       let temp_post = generateJson(post)
       res.push(temp_post)
-    })
-  }
+    }) 
+  } 
   if (pages) {
     pages.each(function(page) {
       if (page.indexing == false) return
