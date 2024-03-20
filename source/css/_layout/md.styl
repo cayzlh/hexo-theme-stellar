@@ -1,61 +1,44 @@
+// 文本区域
 .md-text
   max-width: 100%
   padding: 1rem
-  &:first-child
-    margin-top: 0
   color: var(--text-p1)
-  line-height: 1.7
+  line-height: 1.6
   word-break: break-word
 
+// 摘要
 .md-text.excerpt
   p
     font-size: $fs-14
     margin: 1em 0
 
-h1.article-title
-  margin-top: .5em
-  margin-bottom: 1em
-  line-height: 1.2
-  color: var(--text-p0)
-
+// 正文区域
 .md-text.content
   position: relative
+  padding-top: 0
   padding-bottom: 2rem
   overflow: hidden
-  >:first-child:not(h1)
-    margin-top: 0
-  h1:not(:first-child)
-    margin-top: 1em
-  h2
-    margin-bottom: 1rem
-  h3,h4,h5,h6
-    margin-bottom: .5rem
-  h2,h3,h4,h5,h6
-    color: var(--text-p0)
-    padding-top: 1rem
-    line-height: 1.8
-    &:hover
-      a.headerlink:before
-        opacity: 1
-  blockquote, .tag-plugin
-    h2,h3,h4,h5,h6
-      margin-top: 0.25em
-      margin-bottom: 0.25em
-      padding-top: 0
 
 .l_body[text-indent] .md-text.content
-  >p:not([class])
-    text-indent: 'calc(%s * 2)' % var(--fs-p)
-    text-align: convert(hexo-config('style.text-align'))
+  // 应用缩进效果
+  p:not([class])
+    text-indent: 'calc(%s * 2)' % var(--fsp)
+    text-align: justify
     a
       text-indent: 0
+  ol,ul
+    margin-left: 0.5em
   h1,h2,h3,h4,h5,h6
     text-align: center
-  >h2:not([class])
-    border-bottom: none
-
-.md-text.content:first-child
-  padding-top: 0
+    a.headerlink
+      display: none
+  h2
+    margin: 2em 0 1.5em
+  // 取消缩进效果
+  blockquote, .poetry, .okr, .timeline, li, .article-footer
+    p:not([class])
+      text-indent: 0
+      text-align: convert(hexo-config('style.text-align'))
 
 .md-text
   ul:not(:last-child),
@@ -64,7 +47,8 @@ h1.article-title
     margin: 0
   blockquote,ul,ol
     p,ul,ol
-      font-size: $fs-14
+      --fsp: $fsp1
+      font-size: var(--fsp)
       line-height: 1.5
       code 
         font-size: inherit
@@ -84,33 +68,37 @@ h1.article-title
 
 // titles
 .md-text.content
+  h1,h2,h3,h4,h5,h6
+    color: var(--text)
+    line-height: 1.8
+  blockquote, .tag-plugin
+    h2,h3,h4,h5,h6
+      margin-top: 0.25em
+      margin-bottom: 0.25em
+      
+  a.headerlink 
+    background: $color-theme
+    border-radius: 2px
+    margin-right: 8px
+    trans1 background
+  a.headerlink:hover
+    background: $color-hover
   a.headerlink:before
-    opacity: 0
-    content: '#'
-    position: absolute
-    margin-left: -0.6em
+    content: ''
+    color: white
+    font-weight: 700
+    padding: 0 2px
+    font-size: $fs-12
   h2
-    margin-top: 2rem
-    border-bottom: 1px solid var(--block-border)
-    font-weight: 400
-  h3
-    margin-top: 1.5rem
-    font-weight: 400
-  h4,h5,h6
     font-weight: 500
-  h1+h2
-    margin-top: -0.5rem
-  h2+h3
-    margin-top: -0.5rem
-  h3+h4
-    margin-top: -0.5rem
-  h4+h5
-    margin-top: -0.5rem
-  h5+h6
-    margin-top: -0.5rem
+    a.headerlink:before
+      content: ':'
+  
+.md-text.content:first-child .tag-plugin:first-child
+  margin-top: 0
 
 .md-text p
-  font-size: var(--fs-p)
+  font-size: var(--fsp)
 
 .md-text pre
   -webkit-font-smoothing: auto
@@ -130,38 +118,23 @@ h1.article-title
   margin: auto
   display: block
 
-.md-text 
-  p:not([class]), li:not([class])
-    a:not([class])
-      position: relative
-      padding: 2px 0
-      text-decoration: none
-      line-height: 1.2
-      &:before
-        content: ''
-        position: absolute
-        border-radius: 2px
-        bottom: 0
-        left: 0
-        right: 0
-        height: 1px
-        if hexo-config('style.link.underline') == true
-          opacity: 0.8
-        else
-          opacity: 0
-        background: var(--theme-link)
-        trans1: all
-      &:hover
-        border-bottom: none
-        color: var(--theme-link)
-        z-index 0
-        &:before
-          height: 100%
-          opacity: 0.2
-          z-index -1
-          bottom: 0
-          left: -2px
-          right: -2px
-      &:has(img)
-        &:before
-          content: none
+li:not([class]) a:not([class])
+p:not([class]) a:not([class])
+table a:not([class])
+  position: relative
+  text-decoration: none
+  trans1 all
+  padding: 0 2px
+  border-radius: 0
+  color: inherit
+  background: linear-gradient(0deg,var(--theme-link),var(--theme-link)) no-repeat left 100%/100% 1px
+  &:hover
+    text-decoration: none
+    color: var(--theme-link)
+    border-radius: 4px
+    background: linear-gradient(0deg,var(--theme-link-opa),var(--theme-link-opa)) no-repeat left 100%/100% 100%
+  &:has(img)
+    background: none
+    padding: 0
+    &:hover
+      background: none

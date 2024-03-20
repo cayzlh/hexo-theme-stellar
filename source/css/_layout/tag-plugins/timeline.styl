@@ -1,6 +1,5 @@
-.md-text .tag-plugin.timeline
+.tag-plugin.timeline
   position: relative
-  margin-top: 0
   padding-left: 16px
   &:before
     content: ''
@@ -17,7 +16,7 @@
     &:before
       display: none
 
-.md-text .tag-plugin.timeline .timenode
+.tag-plugin.timeline .timenode
   position: relative
   display: flex
   flex-direction: column
@@ -32,12 +31,8 @@
   &+.timenode
     margin-top: 1rem
   &:hover .header
-    p
+    span
       color: var(--text-p1)
-    .user-info
-      background: $color-theme
-      span
-        color: var(--card)
     &:before
       background: $color-theme
       height: 16px
@@ -49,18 +44,18 @@
   align-items: center
   position: relative
   margin: 0.25rem 0
-  font-size: $fs-12
+  font-size: $fs-13
+  a.user-info span
+    font-weight: 600
   .user-info 
     display: flex
     align-items: center
-    font-size: $fs-12
+    font-size: $fs-13
     font-weight: 500
     color: var(--text-p1)
-    margin-right: 4px
+    margin-right: 8px
     line-height: 1
     border-radius: 16px
-    padding-right: 6px
-    trans2 color background
     img 
       background: white
       height: 16px
@@ -68,19 +63,10 @@
       display: inline
       margin: 0 4px 0 0
       object-fit: contain
-    &:hover
-      background: $color-hover
-  &,p  
+  &,span
     font-weight: 500
     color: var(--text-p3)
-    trans1 color
     line-height: 1
-  p
-    margin: 0 !important
-    font-size: $fs-12 !important
-    a
-      color: inherit
-      font-weight: inherit
   &:before
     content: ''
     position: absolute
@@ -102,7 +88,7 @@
   margin-top: 4px
   box-shadow: $boxshadow-block
   p
-    font-size: $fs-14
+    --fsp: $fsp1
     img  
       display: block
   &:empty
@@ -113,21 +99,17 @@
     width: 240px
 
 .tag-plugin.timeline[api]
-  &.stellar-fcircle-api .timenode:hover .header
-    .user-info
-      background: inherit
-      span
-        color: inherit
   a.body
     display: block
     color: var(--text-p1)
     line-height: 1.25
     padding: 0.75rem 1rem
+    --fsp: $fsp1
+    font-size: var(--fsp)
 
 
 .tag-plugin.timeline[api] .body
   p.title
-    font-size: 1rem
     font-weight: 700
     margin: 0.5rem 0 0.75rem
     line-height: 1.25
@@ -136,8 +118,28 @@
       font-weight: 500
     a 
       color: inherit
+      text-decoration: none
+      border-bottom: 2px solid $color-theme
+      trans1 all
+      background: none
       &:hover
-        color: $color-hover
+        background: none
+        border-radius: 0
+        border-bottom: 2px solid $color-hover
+  >p:first-child:not([class]) a:not([class])
+    padding: 0
+    margin: 0
+    color: inherit
+    text-decoration: none
+    border-bottom: 2px solid $color-theme
+    trans1 all
+    background: none
+    &:hover
+      background: none
+      border-radius: 0
+      border-bottom: 2px solid $color-hover
+    
+  
   a
     &:has(img):after
       display: none
@@ -146,7 +148,7 @@
   img
     margin: 0.5rem auto
   pre code 
-    font-size: $fs-12
+    font-size: $fs-13
 
 .tag-plugin.timeline[api] .body .footer
   margin: 0 0 -0.5rem
@@ -165,8 +167,10 @@
   .flex
     display: flex
     flex-wrap: wrap
-    font-size: $fs-12
+    font-size: $fs-13
     align-items: stretch
+  .left+.right
+    margin-left: 4px
 
 .tag-plugin.timeline[api] .body .footer
   .item
@@ -177,10 +181,18 @@
     padding: 0 0.5rem
     display: flex 
     align-items: center
+    border-color: $color-link
     &:first-child 
       margin-left: 0
     &:last-child 
       margin-right: 0
+  a.item
+    background: var(--block)
+    border-color: var(--block-border)
+    color: inherit
+    &:hover
+      background: var(--block-hover)
+      
   .reaction 
     border-color: var(--block)
 
@@ -190,7 +202,7 @@
   padding: 0 0.5rem
   margin: 0.75rem 0
   p
-    font-size: $fs-13
+    --fsp: $fsp2
     margin: 0.25rem
 
 .tag-plugin.timeline .body
@@ -208,14 +220,15 @@
     margin: 0.5rem 0
     line-height: 1.2
 
-.tag-plugin.timeline.stellar-memos-api .body
+.tag-plugin.timeline.ds-memos .body
   p:first-child 
     margin-top: 2px
   p:last-child
     margin-bottom: 2px
   img  
-    margin: 0
+    margin: .5rem 0
     max-height: 128px
+    cursor: zoom-in
   .tag-plugin.image
     display: flex
     .image-bg+.image-bg

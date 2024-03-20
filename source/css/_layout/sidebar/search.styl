@@ -12,35 +12,37 @@
     transition: 0.38s ease-out
     z-index: 0
     border-radius: $border-bar
-    color: var(--text-p0)
+    color: var(--text)
     background: var(--alpha50)
     &:has(input:focus)
       background: var(--alpha100)
   .search-input
     width: 100%
-    line-height: 16px
     box-sizing: border-box
     font-family: $ff-body
-    font-size: $fs-13
+    font-size: $fs-14
     padding: 12px 0
-    color: var(--text-p0)
+    color: var(--text)
   .search-button 
     border-radius: $border-bar
-    line-height: 40px
-  .search-icon
-    width: 44px
-    margin-left: 4px
-    color: var(--text-p2)
-    margin-bottom: 2px
-    path[p-id="1562"]
-      color: $color-theme
+    display: flex
+    align-items: center
+    height: 40px
+    svg
+      height: 1rem
+      width: 40px
+      margin-left: 4px
+      color: var(--text-p2)
+      fill: currentColor
+      path[p-id="1562"]
+        color: $color-theme
     
   &[searching='true']
-    .search-icon
+    .search-button
       path[p-id="1562"]
         color: $c-green
   &.noresult[searching='true']
-    .search-icon
+    .search-button
       path[p-id="1562"]
         color: $c-red
 
@@ -80,6 +82,7 @@
     .search-result-title
       color: var(--text-p1)
       font-weight: 700
+      font-size: $fs-15
 
     .search-result-content
       overflow: hidden
@@ -87,7 +90,7 @@
       margin: 4px 0 0
       max-height: 13em
       text-align: justify
-      font-size: $fs-12
+      font-size: $fs-13
       display: -webkit-box
       -webkit-box-orient: vertical
       overflow: hidden

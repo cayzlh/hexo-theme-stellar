@@ -34,7 +34,7 @@
       color: var(--text-p4)
     &:hover
       border-bottom: 1px solid $color-theme
-      color: var(--text-p0)
+      color: var(--text)
       time
         color: $color-theme
 
@@ -52,7 +52,15 @@
     align-items: center
     justify-content: space-between
     font-weight: 500
-    font-size: $fs-14
+    font-size: $fsp2
+    span
+      display: flex
+      align-items: center
+    svg
+      height: 1em
+      width: auto
+      transform: scale(1.2)
+      margin-right: 8px
     .badge
       font-weight: 700
       font-family: $ff-code
@@ -60,7 +68,7 @@
       font-size: $fs-12
     &:hover
       background: var(--block-hover)
-      color: var(--text-p0)
+      color: var(--text)
       .badge
         opacity: 1
         color: $color-theme
@@ -90,5 +98,9 @@
       &:before
         color $color-theme
         opacity: 1
-      color: var(--text-p0)
+      color: var(--text)
       background: var(--block-hover)
+
+@media screen and (min-width: $device-mobile)
+  .post-list.author #archive
+    padding: 1rem 0

@@ -1,33 +1,33 @@
-.widget-wrapper.timeline 
+.widget-wrapper.timeline
+  .tag-plugin.timeline
+    padding-left: 0
+    &:before
+      left: 6px
   .widget-body
-    margin-top: 0.5rem
+    overflow hidden
+  .body
+    a
+      trans1 all
+      word-break: break-all
+      --fsp: $fsp2
   .tag-plugin.timeline .timenode
+    z-index 1
+    margin-top: 0.25rem
     .header
-      margin: 0.5rem 16px
-      txt-ellipsis()
+      margin: 0.25rem var(--gap-padding)
       .user-info
-        background: var(--alpha50)
-        &:hover
-          background: $color-hover
-          color: var(--card)
-      &:before
+        background: none
+        padding-right: 0
+      img
         display: none
-    &+.timenode
-      margin-top: 0.75rem
-    .header p
-      color: var(--text-p2)
+
+    .header:before
+      left: calc(6px - var(--gap-padding))
     .body
       border-radius: $border-card
-      background: var(--alpha50)
-      box-shadow: none
-
-      a
-        trans1 all
-        border-bottom: 1px solid var(--text-p0)
-        color: var(--text-p1)
-        &:hover
-          color: $color-hover
-          border-bottom: 1px solid $color-hover
+      padding: 0.5rem 1rem
+      p,li
+        --fsp: $fsp3
       code 
         background: none
         padding: 0
@@ -38,3 +38,12 @@
       
   .tag-plugin.timeline[api] .body .footer
     background: none
+
+.l_left .widget-wrapper.timeline
+  .tag-plugin.timeline
+    padding-left: 0
+    &:before
+      content: none
+.l_left .widget-wrapper.timeline .body
+  box-shadow: none
+  background: var(--alpha50)

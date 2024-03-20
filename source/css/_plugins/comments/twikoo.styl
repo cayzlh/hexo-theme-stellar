@@ -58,7 +58,7 @@
     width: auto
     border: none
     padding: 6px 2rem
-    border-radius: $border-block
+    border-radius: $border-card
     background: var(--block)
     color: var(--text-p1)
     line-height: 2
@@ -74,7 +74,7 @@
     margin-bottom: 1rem
     border: 1px dashed var(--block-border);
     padding: 1rem;
-    border-radius: $border-block;
+    border-radius: $border-card;
     background: var(--card);
 
     &:hover
@@ -86,7 +86,7 @@
 
   .tk-submit
     padding: 1rem 1rem 0 1rem;
-    border-radius: $border-block;
+    border-radius: $border-card;
     background: var(--card);
 
   .tk-tag
@@ -106,15 +106,15 @@
   .tk-comments-no
     color: var(--text-p1);
 
-set_darkmode_comments()
+_dark_comments()
   .cmt-body.twikoo
     --twikoo-lighttext: $color-link;
     --twikoo-secondtext: var(--text-p2);
     --twikoo-theme: $color-theme;
 
-if hexo-config('style.darkmode') == 'auto'
-  @media (prefers-color-scheme: dark)
-    set_darkmode_comments()
 
-if hexo-config('style.darkmode') == 'always'
-  set_darkmode_comments()
+if theme(dark)
+  _dark_comments()
+else if theme(auto)
+  @media (prefers-color-scheme: dark)
+    _dark_comments()

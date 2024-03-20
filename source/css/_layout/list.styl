@@ -7,14 +7,14 @@
 .l_main .post-list
   .post-title
     font-weight: 500
-    margin: 1.25rem 0 .75rem 0
+    margin: 1.25rem auto .75rem 0
     line-height: 1.2
-    font-size: $fs-h3
+    font-size: $fsh4
     border-bottom: none
-    color: var(--text-p0)
+    color: var(--text)
     trans1 color
     @media screen and (max-width: $device-mobile)
-      font-size: $fs-h4
+      font-size: $fsh5
       margin: 0.5rem 0
   .wiki .post-title
     margin-top: 0.5rem
@@ -24,11 +24,11 @@
   display: block
   margin: 1rem 0
   border-radius: $border-card
-  box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.02)
-  trans1 all
+  background: var(--card)
+  hoverable-card()
   overflow: hidden
   z-index: 0
-  background: var(--card)
+  
   position: relative
   .excerpt
     margin: 1rem 0
@@ -40,27 +40,31 @@
         margin: 0.5rem 0
       line-height: 1.5
   .meta.cap
-    display: flex
+    &,span
+      display: flex
+      align-items: center
     flex-wrap: wrap
-    align-items: center
-    margin: 0.25rem 0
-    line-height: 1.5
-    span+span
-      margin-left: 0.5rem
-    span.pin
+    margin: 0
+    line-height: 2
+    --fsp: $fsp1
+    font-size: var(--fsp)
+    svg
+      height: 1em
+      width: auto
       line-height: 0
+      transform: scale(1.2)
+      margin-right: 8px
+    >span+span
+      margin-left: 1.5rem
+    span.pin
       img
         object-fit: contain
-        height: 1.5em
       svg
-        height: 1.5rem
         color: $c-red
 
-.post-list .post-card:hover
-  img 
-    transform: scale(1.02)
-    filter: brightness(80%)
-
+.post-list.post .post-card:hover
+  img
+    filter: brightness(50%)
 
 // common article
 .post-list .md-text
@@ -102,7 +106,8 @@
       position: absolute
       line-height: 1.2
       width: 'calc(100% - %s * 2)' % 1rem
-      color: var(--text-p0)
+      --text-banner: white
+      color: var(--text-banner)
       &[position=top]
         top: 0
         background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0))
@@ -116,18 +121,18 @@
         color: unset
       .title
         font-weight: 500
-        font-size: $fs-h3
+        font-size: $fsh3
       @media screen and (max-width: $device-mobile)
         padding: 1rem
         div+div
           margin-top: 2px
         .title
-          font-size: $fs-h4
+          font-size: $fsh4
         .cap
           font-size: $fs-12
   h2
     margin: .25rem 0
-    font-size: $fs-h4
+    font-size: $fsh4
 
 
 // wiki

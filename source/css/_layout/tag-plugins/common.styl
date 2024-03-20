@@ -1,11 +1,11 @@
 set_text_white()
-  --text-p0: white
+  --text: white
   --text-p1: white
   --text-p2: hsl(0 0 88%)
   --text-p3: #ddd
   --text-code: white
 set_text_black()
-  --text-p0: black
+  --text: black
   --text-p1: #111
   --text-p2: hsl(0 0 12%)
   --text-p3: #555
@@ -16,7 +16,7 @@ set_dynamic_color($theme)
   --theme-border: hsl(hue($theme), 50, 80)
   --theme-block: hsl(hue($theme), 90, 92)
   --theme-codeblock: hsl(hue($theme), 50, 95)
-  --text-p0: hsl(hue($theme), 55, 16)
+  --text: hsl(hue($theme), 55, 16)
   --text-p1: hsl(hue($theme), 55, 20)
   --text-p2: hsl(hue($theme), 90, 24)
 
@@ -30,6 +30,8 @@ set_dynamic_color($theme)
   set_dynamic_color($c-red)
 .colorful[color='orange']
   set_dynamic_color($c-orange)
+.colorful[color='amber']
+  set_dynamic_color($c-amber)
 .colorful[color='yellow']
   set_dynamic_color($c-yellow)
 .colorful[color='green']
@@ -40,6 +42,10 @@ set_dynamic_color($theme)
   set_dynamic_color($c-blue)
 .colorful[color='purple']
   set_dynamic_color($c-purple)
+.colorful[color='theme']
+  set_dynamic_color($color-theme)
+.colorful[color='accent']
+  set_dynamic_color($color-accent)
 
 .colorful[color='light']
   --theme-block: white
@@ -62,13 +68,13 @@ set_dynamic_color($theme)
   --theme-link: #ffe659
   set_text_white()
 
-set_darkmode_tags()
+_dark_tags()
   set_dynamic_color($theme)
     --theme: $theme
     --theme-border: hsl(hue($theme), 50, 24)
     --theme-block: hsl(hue($theme), 16, 16)
     --theme-codeblock: hsl(hue($theme), 12, 18)
-    --text-p0: hsl(hue($theme), 100, 85)
+    --text: hsl(hue($theme), 100, 85)
     --text-p1: hsl(hue($theme), 50, 75)
     --text-p2: hsl(hue($theme), 80, 72)
   .tag-plugin.tag
@@ -77,6 +83,8 @@ set_darkmode_tags()
     set_dynamic_color($c-red)
   .colorful[color='orange']
     set_dynamic_color($c-orange)
+  .colorful[color='amber']
+    set_dynamic_color($c-amber)
   .colorful[color='yellow']
     set_dynamic_color($c-yellow)
   .colorful[color='green']
@@ -100,9 +108,10 @@ set_darkmode_tags()
   .colorful[color='warning'],.colorful[color='light']
     set_text_black()
 
-if hexo-config('style.darkmode') == 'auto'
-  @media (prefers-color-scheme: dark)
-    set_darkmode_tags()
 
-if hexo-config('style.darkmode') == 'always'
-  set_darkmode_tags()
+if theme(dark)
+  _dark_tags()
+else if theme(auto)
+  @media (prefers-color-scheme: dark)
+    _dark_tags()
+
