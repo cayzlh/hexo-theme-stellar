@@ -71,7 +71,7 @@ const SpeakJS = {
 }
 
 $(function () {
-  const els = document.getElementsByClassName('stellar-speak-api');
+  const els = document.getElementsByClassName('ds-speak');
   for (var i = 0; i < els.length; i++) {
     const el = els[i];
     const api = el.getAttribute('api');
