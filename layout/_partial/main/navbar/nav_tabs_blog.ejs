@@ -28,7 +28,7 @@ function layoutDiv() {
       el += '<a href="' + url_for(config.tag_dir) + '">' + __("btn.tags") + '</a>';
     }
   }
-
+  
   if (theme.topic?.publish_list?.length > 0) {
     if (page.layout == 'index_topic') {
       el += '<a class="active" href="' + url_for(theme.site_tree.index_topic.base_dir) + '">' + __("btn.topic") + '</a>';
@@ -36,7 +36,7 @@ function layoutDiv() {
       el += '<a href="' + url_for(theme.site_tree.index_topic.base_dir) + '">' + __("btn.topic") + '</a>';
     }
   }
-
+  
   if (site.posts && site.posts.length > 0) {
     if (is_archive()) {
       el += '<a class="active" href="' + url_for(config.archive_dir) + '">' + __("btn.archives") + '</a>';
@@ -44,7 +44,7 @@ function layoutDiv() {
       el += '<a href="' + url_for(config.archive_dir) + '">' + __("btn.archives") + '</a>';
     }
   }
-
+  
   const { nav_tabs } = theme.site_tree.index_blog
   if (nav_tabs) {
     for (let key of Object.keys(nav_tabs)) {

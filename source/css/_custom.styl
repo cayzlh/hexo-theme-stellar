@@ -12,15 +12,7 @@ $color-block = convert(hexo-config('style.color.block'))
 $color-code = convert(hexo-config('style.color.code'))
 $color-text = convert(hexo-config('style.color.text'))
 
-@font-face
-  font-family: 'ZFont'
-  src: url('https://gcore.jsdelivr.net/gh/cayzlh/psychic-potato@master/font/zfont/ZFonts.woff2')
-  format("woff2")
-  font-display: swap
-  font-weight: normal
-  font-style: normal
-
-$ff-body = ZFont, system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif
+$ff-body = system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif
 $ff-codeblock = Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif
 $ff-code = $ff-codeblock
 $ff-logo = $ff-body
@@ -73,14 +65,14 @@ $border-button = 4px
   --fsh2: 'calc(%s + 11px)' % var(--fsp)
   --fsh3: 'calc(%s + 7px)' % var(--fsp)
   --fsh4: 'calc(%s + 4px)' % var(--fsp)
-
+  
   // 侧边栏文字内容宽度
   --side-content-width: 224px
   // 元素轮廓到容器边缘的间距
   --gap-margin: 16px
   // 元素文本内容到元素自身的轮廓的间距
   --gap-padding: 16px
-
+  
   --gap-p: 'calc(%s + 4px)' % $fs-body // gap for paragraph
   --gap-p-compact: 'calc(%s * 0.75)' % $fs-body
   // desktop 2k or larger
