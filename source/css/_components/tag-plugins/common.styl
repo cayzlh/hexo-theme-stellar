@@ -109,9 +109,9 @@ _dark_tags()
     set_text_black()
 
 
-:root[data-theme="dark"]
+if theme(dark)
   _dark_tags()
-:root:not([data-theme])
+else if theme(auto)
   @media (prefers-color-scheme: dark)
     _dark_tags()
 

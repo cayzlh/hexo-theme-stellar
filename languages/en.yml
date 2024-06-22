@@ -3,7 +3,6 @@ btn:
   blog: Blog
   wiki: Wiki
   topic: Topic
-  notebook: Notebook
   recent_publish: Recent
   all_wiki: All Products
   category: Category
@@ -19,8 +18,6 @@ btn:
 
 meta:
   recent_update: Recent Update
-  tag_tree: Tags
-  all_notes: All Notes
   toc: On This Page
   read_next: READ NEXT
   prev: Prev
@@ -56,10 +53,6 @@ search:
 
 message:
   copied: Copied!
-  theme_switched:
-    light: Switched to Light Mode
-    dark: Switched to Dark Mode
-    auto: Switched to Auto Mode
 
 symbol:
   comma: ", "

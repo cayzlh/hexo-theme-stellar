@@ -27,9 +27,9 @@
   trans1: all
   ondark()
     --blur-bg: alpha(#000, .4)
-  :root[data-theme="dark"] &
+  if theme(dark)
     ondark()
-  :root:not([data-theme]) &
+  else if theme(auto)
     @media (prefers-color-scheme: dark)
       ondark()
 
@@ -52,7 +52,7 @@
 // 侧边栏弹出后
 .l_body[leftbar] .float-panel, .l_body[rightbar] .float-panel
   box-shadow: 0 0 4px -1px $color-theme, 0 0 16px -4px $color-theme, 0 0 32px -12px $color-theme, 0 0 128px -32px $color-theme
-
+  
 .l_body[leftbar] .float-panel button.leftbar-toggle
   background: var(--alpha100)
 

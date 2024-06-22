@@ -108,8 +108,8 @@ _dark_mermaid()
     fill: #ccc
 
 
-:root[data-theme="dark"]
+if theme(dark)
   _dark_mermaid()
-:root:not([data-theme])
+else if theme(auto)
   @media (prefers-color-scheme: dark)
     _dark_mermaid()

@@ -18,12 +18,9 @@ function custom_inject() {
 <%- partial('scripts/defines') %>
 <%- partial('scripts/utils') %>
 <%- partial('scripts/sidebar') %>
-<%- partial('scripts/tagtree') %>
 
 <!-- required -->
-<script src="<%- `${theme.stellar.main_js}?v=${stellar_info('version')}` %>" defer></script>
-
-<%- partial('scripts/theme') %>
+<script src="<%- `${theme.stellar.main_js}?v=${stellar_info('version')}` %>" async></script>
 
 <!-- optional -->
 <%- partial('comments/script') %>

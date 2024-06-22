@@ -113,11 +113,13 @@ hoverable-card()
   ondark()
     &:hover
       box-shadow: 0 0 4px -2px $color-theme, 0 0 24px -8px $color-theme
-  :root[data-theme="light"] &
+  if theme(light)
     onlight()
-  :root[data-theme="dark"] &
+  else if theme(dark)
     ondark()
-  :root:not([data-theme]) &
-    onlight()
+  else
+    @media (prefers-color-scheme: light)
+      onlight()
     @media (prefers-color-scheme: dark)
       ondark()
+  
